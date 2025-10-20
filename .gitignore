@@ -9,3 +9,5 @@ desktop.ini
 .Rdata
 .httr-oauth
 .quarto
+/doc/
+/Meta/

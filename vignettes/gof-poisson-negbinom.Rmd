@@ -1,12 +1,11 @@
 ---
-title: "gof-poisson-negbinom"
+title: "GOF Poisson & NegBin (auto pooling)"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{gof-poisson-negbinom}
+  %\VignetteIndexEntry{GOF Poisson & NegBin (auto pooling)}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,

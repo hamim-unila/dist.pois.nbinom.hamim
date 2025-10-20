@@ -5,6 +5,4 @@
 inst/doc
 doc/
 Meta/
-.Rdata
-.httr-oauth
-.quarto
+desktop.ini

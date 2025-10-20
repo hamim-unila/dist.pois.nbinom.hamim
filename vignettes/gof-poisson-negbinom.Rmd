@@ -1,0 +1,91 @@
+---
+title: "gof-poisson-negbinom"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{gof-poisson-negbinom}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(dist.pois.nbinom.hamim)
+```
+
+## Example data
+```{r data}
+tempel <- "
+X   Fx
+0   114
+1   25
+2   15
+3   10
+4   6
+5   5
+6   2
+7   1
+8   1
+9   0
+10  1
+"
+dataku <- read.table(text = tempel, header = TRUE)
+dataku
+```
+
+## Poisson: preview (no pooling), include tail
+```{r preview-poisson}
+prev <- distribusi.hamim(
+  data    = dataku,
+  distrib = "poisson",
+  pool    = "none",
+  tail    = TRUE,
+  plot    = FALSE
+)
+prev$tabel
+sum(prev$tabel$Px)  # ~1 because tail bin is included
+```
+
+## Poisson: GOF with automatic pooling (Ex >= 3)
+```{r gof-poisson}
+uji_pois <- distribusi.hamim(
+  data    = dataku,
+  distrib = "poisson",
+  ex_min  = 3,
+  pool    = "auto",
+  tail    = TRUE,
+  plot    = FALSE
+)
+uji_pois$chi_sq; uji_pois$df; uji_pois$p_val
+uji_pois$tabel
+```
+
+## Negative Binomial: log.iterasi (Ex >= 5)
+```{r gof-negbinom}
+uji_nb <- distribusi.hamim(
+  data    = dataku,
+  distrib = "negbinom",
+  method  = "log.iterasi",  # or "MLE", "k.langsung", "manual.iterasi"
+  ex_min  = 5,
+  pool    = "auto",
+  tail    = TRUE,
+  plot    = FALSE
+)
+uji_nb$k; uji_nb$mu; uji_nb$p_val
+uji_nb$tabel
+```
+
+## Helper info
+```{r info}
+info.distribusi.hamim()
+```
+
+## Session info
+```{r}
+sessionInfo()
+```

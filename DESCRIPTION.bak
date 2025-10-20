@@ -1,0 +1,28 @@
+---
+title: "gof-poisson-negbinom"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{gof-poisson-negbinom}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Package: dist.pois.nbinom.hamim
+Title: GOF for Poisson & Negative Binomial with Auto Pooling
+Version: 0.1.0
+Authors@R: person("Nama", "Anda", email = "email@contoh.com", role = c("aut","cre"))
+Description: Preview and chi-square GOF for Poisson/NegBin with two-sided pooling and optional tail bin.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Depends: R (>= 3.6)
+Imports:
+    MASS,
+    ggplot2
+Suggests:
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Config/testthat/edition: 3
+RoxygenNote: 7.3.2

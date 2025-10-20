@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![R-CMD-check](https://github.com/hamim-unila/dist.pois.nbinom.hamim/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/hamim-unila/dist.pois.nbinom.hamim/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 dist.pois.nbinom.hamim provides tools to preview and test chi-square
@@ -15,9 +16,16 @@ methods for NegBin are supported (MLE, direct-k, manual, log-iterative).
 
 ## Installation
 
-# From a local checkout (recommended during development)
+# From GitHub (untuk pengguna)
 
-# Run in the package root (where DESCRIPTION lives)
+# install.packages(“remotes”)
+
+remotes::install_github(“hamim-unila/dist.pois.nbinom.hamim”,
+build_vignettes = TRUE)
+
+# From a local checkout (untuk pengembangan di komputer sendiri)
+
+# Jalankan di root paket (yang berisi DESCRIPTION)
 
 devtools::install(build_vignettes = TRUE)
 
